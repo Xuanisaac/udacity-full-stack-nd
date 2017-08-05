@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet">
+  <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+  <title>Multi User Blog</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+<div class="container">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        {% if user %}
+        <a class="navbar-brand" href="/" title="Home">{{user.name}}</a>
+        {% else %} <a class="navbar-brand" href="/" title="Home">Blogger</a>
+        {% endif %}
+
+        </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+        {% if user %}
+          <a class="login-link" href="/logout">Logout</a>
+        {% else %}<a  title="Home" data-toggle="modal" data-target="#signup_modal">Sign Up</a></li>
+
+            <li><a  title="Login" data-toggle="modal" data-target="#login_modal">Login</a></li>
+
+        {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="row">
+    <div class="col-md-12 ">
+        <h1 class="text-center main-title">Multi-User Blog</h1>
+      </a>
+    </div>
+
+  </div>
+
+  <nav id="drawer">
+    <ul class="nav navbar-nav nav__list">
+      <li class="nav__item"><a href="/blog">Picks</a></li>
+      <li class="nav__item"><a href="/blog/newpost">New Blog</a></li>
+      <li class="nav__item"><a href="/contactme">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+
+
+
+  <div id="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+
+
+
+
+  <div class="modal fade" id="signup_modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Sign Up</h2>
+        </div>
+        <div class="modal-body">
+            <form method="post" action='/signup' name="login_form">
+
+              <label><b>Username</b></label>
+              <p><input type="text" name="username" value="{{username}}" placeholder="Username"></p>
+
+              <label><b>Password</b></label>
+              <p><input type="password" name="password" placeholder="Password" value=""></p>
+              <p><input type="password" name="verify" value="" placeholder="Verify Your Password"><p>
+              <label><b>Email</b></label>
+              <p><input type="text" class="span3" name="eid" id="email" placeholder="Email(Optional)"></p>
+              <div class="error">{{error}}</div>
+              <p><button type="submit" class="btn btn-primary">Sign Up</button>
+              <a href="">Forgot Password?</a>
+              </p>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="login_modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Login</h2>
+        </div>
+        <div class="modal-body">
+            <form method="post" action='/login' name="login_form">
+
+              <label><b>Username</b></label>
+              <p><input type="text" name="username" value="{{username}}" placeholder="Username"></p>
+
+              <label><b>Password</b></label>
+              <p><input type="password" name="password" placeholder="Password" value=""></p>
+              <div class="error">{{error}}</div>
+              <p><button type="submit" class="btn btn-primary">Login</button>
+              <a href="">Forgot Password?</a>
+              </p>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    var drawer = document.querySelector('.nav');
+
+    menu.addEventListener('click', function(e) {
+      drawer.classList.toggle('open');
+      e.stopPropagation();
+    });
+    main.addEventListener('click', function() {
+      drawer.classList.remove('open');
+    });
+
+  </script>
+
+</div>
+</body>
+
+</html>
+

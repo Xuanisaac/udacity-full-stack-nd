@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="row">
+        <div class="col-md-6">
+          <img class="img-rounded logo image-responsive" src="/static/images/avatar.jpg" alt="logo">
+        </div>
+        <div class="col-md-6 text-right text-capitalize">
+          <h1 class="text-right">Xuan He</h1>
+          <h4>Full Stack Developer</h4>
+        </div>
+
+         <a id="menu" class="header__menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+          </svg>
+        </a>
+    </header>
+
+    <nav id="drawer">
+      <ul class="nav navbar-nav nav__list">
+        <li class="nav__item"><a href="#featured-work">Portfolio</a></li>
+        <li class="nav__item"><a href="#about">About</a></li>
+        <li class="nav__item"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row" id="main-img">
+      <div class="col-md-12">
+        <img class="image-responsive img-circle center" src="/static/images/centered.jpg" alt="main" >
+        <p></p>
+      </div>
+    </div>
+
+    <div class="bottom_header_text row" id="featured-work">
+      <h2 class="text-center">Portfolio</h2>
+    </div>
+
+
+    <div class="row bottom_container">
+      <div class="col-md-4" >
+        <div class="hover11" data-toggle="modal" data-target="#myModal1">
+        <figure><img class="img-rounded" src="/static/images/mocap-project.png" alt="Mocap Project Image"></figure>
+        </div>
+        <h4 class="text-uppercase">MoCap Project</h4>
+        <p>https://github.com/udacity/A/</p>
+      </div>
+      <div class="col-md-4">
+        <div class="hover11" data-toggle="modal" data-target="#myModal2">
+          <figure><img class="img-rounded" src="/static/images/auto_buggy.jpg" alt="Auto-Buggy Image"></figure>
+        </div>
+        <h4 class="text-uppercase">Auto Buggy</h4>
+        <p>https://github.com/udacity/B/</p>
+      </div>
+      <div class="col-md-4">
+        <div class="hover11" data-toggle="modal" data-target="#myModal3">
+        <figure><img class="img-rounded" src="/static/images/exo_project.jpg" alt="Exo-skeleton Project"></figure>
+        </div>
+        <h4 class="text-uppercase">Exo-Skeleton</h4>
+        <p>https://github.com/udacity/C/</p>
+      </div>
+    </div>
+    <div class="row" id="about">
+      <h2>About</h2>
+    </div>
+
+
+    <div class="row" id="contact">
+      <div class="col-md-12 text-center">
+        <a class="ic fa fa-github fa-2x" href="https://github.com/Xuanisaac" title="GitHub" aria-hidden="true"></a>
+        <a class="ic fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/xuanisaache" title="Linkedin" target="_blank"></a>
+        <a class="ic fa fa-envelope fa-2x" href="mailto:xhe312@gatech.edu" title="xhe312@gatech.edu" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal content-->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sensor Fusion For Monitoring Human Gait</h4>
+        </div>
+        <div class="modal-body">
+          <em>Keywords</em>: C/C++, inertial sensors, computer animation
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Title: Auto-Navigated Bubby</h4>
+        </div>
+        <div class="modal-body">
+          <em>Keywords</em>: PID Control, Robotics
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Exo-Skeleton</h4>
+        </div>
+        <div class="modal-body">
+          <em>Keywords</em>: Firmware, C, ARM Embedded System
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  var drawer = document.querySelector('.nav');
+
+  menu.addEventListener('click', function(e) {
+    drawer.classList.toggle('open');
+    e.stopPropagation();
+  });
+  // main.addEventListener('click', function() {
+  //   drawer.classList.remove('open');
+  // });
+
+  </script>
+</body>
+</html>

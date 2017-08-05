@@ -1,0 +1,43 @@
+<div class="post">
+  <div class="post-heading">
+    <div class="post-title">
+      {{p.subject}}
+    </div>
+    Author
+      {{p.author}}
+    <div class="post-date">
+      {{p.created.strftime("%b %d, %Y")}}
+    </div>
+  </div>
+
+  <div class="post-content">
+    {{p._render_text | safe}}
+  </div>
+
+  <br></br>
+  <div class="row">
+  <form action="/blog" method="post" >
+    <input type="submit" value="Delete" class="post_submit">
+    <input type="hidden" name="post_id" value="{{p.key().id()}}">
+    <input type="hidden" name="action" value="delete">
+  </form>
+
+  <form action="/blog" method="post" >
+    <input type="submit" value="Edit" class="post_submit">
+    <input type="hidden" name="post_id" value="{{p.key().id()}}">
+    <input type="hidden" name="action" value="edit">
+  </form>
+
+
+    <a href="/blog/{{p.key().id()}}" class="btn post_submit">More</a>
+
+
+  </div>
+</div>
+
+<!-- <script>
+    $(".post").on("click", "form", function(e) {
+      e.preventDefault();
+      $(this).parent().remove();
+  });
+</script> -->

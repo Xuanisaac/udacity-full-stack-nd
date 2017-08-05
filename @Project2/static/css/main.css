@@ -1,0 +1,180 @@
+/** {
+    border: 1px solid red !important;
+}*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    color: #2d3c49;
+    font-weight: 100;
+    margin-top: 2%;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  min-height: 56px;
+  transition: min-height 0.3s;
+}
+
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0 auto;
+
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 31%;
+  text-align: center;
+  line-height: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+
+.nav a {
+  text-decoration: none;
+  color: #616161;
+/*  padding: 1.5em;*/
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #212121;
+}
+
+.container {
+    max-width: 960px;
+    display: block;
+    border: 15px;
+}
+
+li.a {
+    line-height: 0px;
+}
+
+img.logo {
+    max-width: 100%;
+    max-height: 100px;
+}
+img {
+    margin-top: 10px;
+    max-width: 100%;
+}
+.col-md-6 {
+    width: 50%;
+}
+.col-md-12 {
+    width: 100%;
+}
+.center{
+    max-height: 500px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+#menu {
+    display: none;
+    width: 30px;
+    margin-top: 20px;
+}
+
+hr {
+    border-width: 2px;
+}
+
+.hover11 figure img {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.hover11 figure:hover img {
+  opacity: .5;
+}
+
+@media screen and (min-width: 400px) and (max-width: 780px) {
+    h1 {
+        font-size: 36px;
+    }
+    a {
+        padding-bottom: 0px;
+        line-height: 0px;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+        header.row .col-md-6 {
+        width: 40%;
+    }
+
+    #menu {
+        position: relative;
+        width: 10%;
+        left: 5%;
+        display: block;
+        max-width: 40px;
+
+    }
+    .nav {
+        z-index: 10;
+        background-color: #fff;
+        width: 300px;
+        position: absolute;
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-500px, 0);
+        transform: translate(-500px, 0);
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+
+    .nav.open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #E0E0E0;
+        width: 100%;
+        text-align: left;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    header h1 {
+        font-size: 30px;
+    }
+    header h4 {
+        display: none;
+    }
+
+}
+
+

@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block head %}
+    <title>
+        Login
+    </title>
+{% endblock %}
+
+{% block content %}
+        
+        <div id="signInButton">
+            <span class="g-signin"
+              data-scope="openid email"
+              data-clientid="284347077991-0oji106f8dpku2dhebrpdrfrdj5uhsha.apps.googleusercontent.com"
+              data-redirecturi="postmessage"
+              data-accesstype="offline"
+              data-cookiepolicy="single_host_origin"
+              data-callback="signInCallback"
+              data-approvalprompt="force">
+            </span>
+        </div>
+
+        <div id="result"></div>
+
+        <button>
+          <fb:login-button scope="public_profile,email" onlogin="sendTokenToServer();">
+            <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
+          </fb:login-button>
+        </button>
+{% endblock %}
